@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ExpenseList from "./expense-tracker/ExpenseList";
+import ExpenseFilter from "./expense-tracker/component/ExpenseFilter";
 
 function App() {
   const [expenses, setExpenses] = useState([
@@ -15,6 +16,10 @@ function App() {
   ]);
   return (
     <div>
+      <h1>Expense Tracker</h1>
+      <div className="mb-3 mt-3">
+        <ExpenseFilter onSelectCategory={(cate) => console.log(cate)} />
+      </div>
       <ExpenseList
         expenses={expenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
