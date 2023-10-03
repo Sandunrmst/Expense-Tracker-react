@@ -39,7 +39,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
         reset();
       })}
     >
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="description" className="form-label">
           Description
         </label>
@@ -55,7 +55,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
         )}
       </div>
 
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="amount" className="form-label">
           Amount
         </label>
@@ -71,7 +71,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
         )}
       </div>
 
-      <div className="md-3">
+      <div className="md-2">
         <label htmlFor="category" className="form-label">
           Category
         </label>
@@ -87,7 +87,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           <p className="text-danger">{errors.category.message}</p>
         )}
       </div>
-      <button className="btn btn-primary mt-3"> Submit</button>
+      <button className="btn btn-primary mt-2"> Submit</button>
     </form>
   );
 };

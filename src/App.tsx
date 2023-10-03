@@ -32,25 +32,33 @@ function App() {
     : expenses;
 
   return (
-    <div className="mx-auto w-50 mt-5">
-      <h1 className="mb-5 text-primary">Expense Tracker</h1>
+    <div className="mx-auto w-50 mt-10">
+      <h1 className="mb-3 text-primary fw-bold ">Expense Tracker</h1>
+      <div className="d-flex justify-content-between">
+        <div className="mb-4">
+          <ExpenseForm
+            onSubmit={(expense) =>
+              setExpenses([
+                ...expenses,
+                { ...expense, id: expenses.length + 1 },
+              ])
+            }
+          />
+        </div>
 
-      <div className="mb-3">
-        <ExpenseForm
-          onSubmit={(expense) =>
-            setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])
-          }
-        />
+        <div>
+          <div className="mb-3 mt-3">
+            <ExpenseFilter
+              onSelectCategory={(cate) => setSelectedCategory(cate)}
+            />
+          </div>
+
+          <ExpenseList
+            expenses={visibleExpenses}
+            onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
+          />
+        </div>
       </div>
-
-      <div className="mb-3 mt-3">
-        <ExpenseFilter onSelectCategory={(cate) => setSelectedCategory(cate)} />
-      </div>
-
-      <ExpenseList
-        expenses={visibleExpenses}
-        onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
-      />
     </div>
   );
 }
