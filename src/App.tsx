@@ -16,14 +16,15 @@ function App() {
   //Expenses array list
   const [expenses, setExpenses] = useState([
     { id: 1, description: "Tell Bill", amount: 10, category: "Utilities" },
-    { id: 2, description: "water Bill", amount: 10, category: "Utilities" },
+    { id: 2, description: "Water Bill", amount: 5, category: "Utilities" },
     {
       id: 3,
-      description: "electricity Bill",
+      description: "Electricity Bill",
       amount: 10,
-      category: "Groceries",
+      category: "Utilities",
     },
-    { id: 4, description: "gas Bill", amount: 10, category: "Utilites" },
+    { id: 4, description: "Gas Bill", amount: 25, category: "Utilites" },
+    { id: 5, description: "Pasta and Rice", amount: 8, category: "Groceries" },
   ]);
 
   //Checking of what is currently selected category
